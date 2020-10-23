@@ -153,6 +153,13 @@ public class CrossChainBootStrap extends BaseCrossChainBootStrap {
                 }
             }
 
+            registeredCrossChainService.get().getChainInfoList().forEach(chainInfo -> {
+                if(chainInfo.getChainId() == nulsCrossChainConfig.getChainId()){
+                    return ;
+                }
+                Log.info("验证人列表：{}",chainInfo.getVerifierList());
+            });
+
             /*
              * 如果为账户模块启动，向账户模块发送链前缀
              */
