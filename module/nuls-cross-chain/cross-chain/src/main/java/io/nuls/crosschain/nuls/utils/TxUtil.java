@@ -286,6 +286,7 @@ public class TxUtil {
         int chainId = chain.getChainId();
         NulsHash hash = ctx.getHash();
         String hashHex = hash.toHex();
+        chain.getLogger().debug("开始处理跨链交易 hash:{}",hashHex);
         /*
         判断本节点是否为共识节点，如果为共识节点则签名，如果不为共识节点则广播该交易
         */
